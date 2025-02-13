@@ -50,7 +50,7 @@ jobs:
     needs: set-date
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: Install zip
         run: choco install zip --no-progress --yes
@@ -81,7 +81,7 @@ jobs:
     needs: set-date
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: Install zip
         run: choco install zip --no-progress --yes
@@ -131,7 +131,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y curl wget libicu-dev libcurl4-openssl-dev zlib1g-dev libkrb5-dev clang llvm binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu zlib1g-dev:arm64
       
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Set up dotnet
         uses: actions/setup-dotnet@v4
         with:
@@ -164,7 +164,7 @@ jobs:
     needs: set-date
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: Set up NDK
         shell: pwsh
@@ -210,7 +210,7 @@ jobs:
     container: mcr.microsoft.com/dotnet/sdk:9.0-alpine-amd64
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - run: apk add clang build-base zlib-dev
       - run: dotnet publish src/N_m3u8DL-RE -r linux-musl-x64 -c Release -o artifact -p:InvariantGlobalization=true
@@ -232,7 +232,7 @@ jobs:
     container: mcr.microsoft.com/dotnet-buildtools/prereqs:ubuntu-22.04-cross-arm64-alpine
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: Set up dotnet
         uses: actions/setup-dotnet@v4
@@ -259,7 +259,7 @@ jobs:
     needs: set-date
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: Set up dotnet
         uses: actions/setup-dotnet@v4
